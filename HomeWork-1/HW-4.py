@@ -1,6 +1,16 @@
 #Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y).
 
-check = int(input('Введите номер четверти: '))
+def InputNumbers(inputText):
+    is_OK = False
+    while not is_OK:
+        try:
+            number = int(input(f"{inputText}"))
+            is_OK = True
+        except ValueError:
+            print("Введено не число!")
+    return number
+
+check = InputNumbers('Введите номер четверти: ')
 
 match check:
     case 1:
